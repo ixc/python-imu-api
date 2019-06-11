@@ -3,7 +3,6 @@ import socket
 import datetime
 import logging
 from .utils import clean_broken_json_text
-from .constants import IMU_DATETIME_FORMAT
 
 logger = logging.getLogger(__name__)
 
