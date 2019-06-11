@@ -109,7 +109,7 @@ imu_terms.add("irn", 123)
 imu_terms.add("irn", 234)
 imu_results = imu_table.find_terms(imu_terms)
 result_count = imu_results.data["result"]
-fetched = imu_results.fetch(
+results = imu_results.fetch(
     flag="current", 
     offset=0, 
     count=result_count, 
@@ -118,7 +118,6 @@ fetched = imu_results.fetch(
         "TitMainTitle",
     ),
 )
-fetched.data["result"]["rows"]
 ```
 
 This will query the work/catalogue module (`ecatalogue`) and fetch the irn and title of the works that match 
