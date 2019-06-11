@@ -196,7 +196,7 @@ IMu doesn't do a great job of handling strings within JSON. It looks like they j
 building JSON payloads (possibly necessary for their binary stuff). This has one big downside: they don't escape 
 newlines or other control characters that are in the data.
 
-We use python's `json` library, so Imu's unescaped newlines produced malformed JSON that would crashe our 
+We use python's `json` library, so Imu's unescaped newlines produced malformed JSON that would crash our 
 parser. Unfortunately, we've ended up needed to pre-process all incoming payloads and escape the characters 
 manually. Once processed, then we can parse the payloads. Note that there's some test coverage on that part, but 
 it's the part most likely to be tripped up by edge-cases in the data.
