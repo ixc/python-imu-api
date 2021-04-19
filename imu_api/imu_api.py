@@ -7,14 +7,15 @@ from .utils import clean_broken_json_text
 logger = logging.getLogger(__name__)
 
 
-def create_imu_session(host, port, username, password):
+def create_imu_session(host, port, username=None, password=None):
     """
     Handles the common initialisation process of connecting and
     logging in to an IMu service
     """
     imu_session = Session(host=host, port=int(port))
     imu_session.connect()
-    imu_session.login(username=username, password=password)
+    if username != None:
+        imu_session.login(username=username, password=password)
     return imu_session
 
 
