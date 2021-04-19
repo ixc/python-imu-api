@@ -281,6 +281,28 @@ class Module(object):
         data = self.session.send(message)
         return Result(self, data)
 
+    def find_key(self, key):
+        logger.debug("finding key: %s" % key)
+        message = {
+            "name": "Module",
+            "create": self.table,
+            "method": "findKey",
+            "params": key,
+        }
+        data = self.session.send(message)
+        return Result(self, data)
+
+    def find_keys(self, keys):
+        logger.debug("finding keys: %s" % keys)
+        message = {
+            "name": "Module",
+            "create": self.table,
+            "method": "findKeys",
+            "params": keys,
+        }
+        data = self.session.send(message)
+        return Result(self, data)
+
 
 def parse_datetime(datetime_string):
     return datetime.datetime.strptime(datetime_string, IMU_DATETIME_FORMAT)
