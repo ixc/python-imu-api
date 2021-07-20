@@ -107,7 +107,8 @@ class Session(object):
             ):
                 raise LicenseError(response_data)
             raise UnexpectedResponse(
-                "Unexpected response status. Response data: %s" % response_data
+                "Unexpected response status. Response data: %s" % response_data,
+                response_data
             )
 
         return response_data
