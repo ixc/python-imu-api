@@ -148,7 +148,7 @@ class Session(object):
 
 class Term(object):
     OR_OPERATOR = "or"
-    AND_OPERATOR = "or"
+    AND_OPERATOR = "and"
     OPERATORS = (AND_OPERATOR, OR_OPERATOR)
 
     def __init__(self, operator=AND_OPERATOR, terms=None):
